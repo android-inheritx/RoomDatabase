@@ -56,13 +56,11 @@ class UserListActivity : AppCompatActivity() {
         etSearchText.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 val searchKeyword = etSearchText.text.toString().trim()
-                if (!searchKeyword.equals("", ignoreCase = true)) {
                     if (searchKeyword.isEmpty()) {
                         toastNow("Please enter user name")
                     } else {
                         searchUserByName(searchKeyword)
                     }
-                }
                 return@OnEditorActionListener true
             }
             false
@@ -83,6 +81,7 @@ class UserListActivity : AppCompatActivity() {
             ivSearch.show()
 
             hideSoftKeyboard()
+            etSearchText.setText("")
 
             getUsers()
         }
@@ -182,6 +181,5 @@ class UserListActivity : AppCompatActivity() {
 //            rvUser.adapter!!.notifyDataSetChanged()
 //        })
 
-        etSearchText.setText("")
     }
 }
