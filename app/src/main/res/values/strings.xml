@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RoomDatabaseDemo</string>
+    <string name="msg_empty_name">Please enter name</string>
+    <string name="msg_empty_email">Please enter email</string>
+    <string name="msg_invalid_email">Please enter valid email</string>
+    <string name="msg_empty_phone">Please enter phone number</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="msg_empty_gender">Please select any one gender</string>
+    <string name="msg_empty_age">Please enter age</string>
+    <string name="msg_invalid_age">Please enter valid age</string>
+</resources>

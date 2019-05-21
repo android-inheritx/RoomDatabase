@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="user"
+                type="com.example.roomdatabasedemo.database.User"/>
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:id="@+id/containerMain"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/tvId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:text="1"/>
+
+                <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{user.name}"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        tools:text="vidhi"/>
+
+                <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{user.email}"
+                        android:layout_marginTop="2dp"
+                        tools:text="vidhi@inheritx.com"/>
+
+                <TextView
+                        android:id="@+id/tvNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{user.phoneNumber}"
+                        android:layout_marginTop="2dp"
+                        tools:text="9904927393"/>
+
+                <TextView
+                        android:id="@+id/tvGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text='@{String.valueOf(user.age)}'
+                        android:layout_marginTop="2dp"
+                        tools:text="Female"/>
+
+                <TextView
+                        android:id="@+id/tvCreatedAt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:text="11233543563675"/>
+            </LinearLayout>
+
+            <ImageView
+                    android:id="@+id/ivDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:tint="#E82020"
+                    android:src="@android:drawable/ic_menu_delete"/>
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#39000000"/>
+
+    </LinearLayout>
+
+</layout>
