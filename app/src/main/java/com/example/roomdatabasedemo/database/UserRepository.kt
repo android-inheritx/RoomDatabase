@@ -5,12 +5,10 @@ import android.arch.lifecycle.LiveData
 
 class UserRepository(application: Application) {
     var userDao: UserDao? = null
-    var mAllUser: LiveData<List<User>>? = null
 
     init {
         val userDatabase = AppDatabase.getAppDataBase(application)
         userDao = userDatabase?.userDao()
-        mAllUser = getAllUser()
     }
 
     fun getAllUser(): LiveData<List<User>>? {
