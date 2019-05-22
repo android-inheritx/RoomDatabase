@@ -45,6 +45,7 @@ class UserListActivity : AppCompatActivity() {
         rvUser.layoutManager = LinearLayoutManager(this)
         ivBack.hide()
         tvToolbarTitle.text = "Users"
+        setDataInRecyclerView(arrUser)
     }
 
 
@@ -56,11 +57,11 @@ class UserListActivity : AppCompatActivity() {
         etSearchText.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 val searchKeyword = etSearchText.text.toString().trim()
-                    if (searchKeyword.isEmpty()) {
-                        toastNow("Please enter user name")
-                    } else {
-                        searchUserByName(searchKeyword)
-                    }
+                if (searchKeyword.isEmpty()) {
+                    toastNow("Please enter user name")
+                } else {
+                    searchUserByName(searchKeyword)
+                }
                 return@OnEditorActionListener true
             }
             false
@@ -103,7 +104,7 @@ class UserListActivity : AppCompatActivity() {
 
             Log.d("userList", arrUser.toString())
 
-            setDataInRecyclerView(arrUser)
+            rvUser.adapter!!.notifyDataSetChanged()
         })
     }
 
